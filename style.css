@@ -1,0 +1,75 @@
+:root {
+  --bg-color: #282c34;
+  --white-key: #f0f0f0;
+  --black-key: #1a1a1a;
+  --active-key: #3498db;
+}
+
+body {
+  background-color: var(--bg-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.piano-container {
+  padding: 50px;
+  background: #111;
+  border-radius: 10px;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+  border-top: 10px solid #444;
+}
+
+.piano-keyboard {
+  display: flex;
+  position: relative;
+}
+
+.key {
+  cursor: pointer;
+  user-select: none;
+}
+
+.white {
+  width: 60px;
+  height: 250px;
+  background: linear-gradient(to bottom, #eee 0%, #fff 100%);
+  border: 1px solid #ccc;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  box-shadow: inset 0 0 5px #ccc, 0 5px 2px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.white:hover {
+  background: #f9f9f9;
+}
+
+.white:active {
+  background: var(--active-key);
+  box-shadow: inset 0 0 10px rgba(0,0,0,0.3);
+  transform: translateY(2px);
+}
+
+.black {
+  width: 40px;
+  height: 150px;
+  background: linear-gradient(to bottom, #444 0%, #000 100%);
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+  margin-left: -20px;
+  margin-right: -20px;
+  z-index: 2;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.5);
+}
+
+.black:hover {
+  background: #333;
+}
+
+.black:active {
+  background: #2980b9;
+  height: 148px; /* Simulates depth */
+}
